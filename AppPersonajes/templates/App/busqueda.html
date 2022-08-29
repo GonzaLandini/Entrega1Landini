@@ -1,0 +1,22 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="titulotemplates">Realizá la búsqueda que quieras!</h1>
+
+{% endblock %}
+
+{% block contenido_variable %}
+
+    <div class="contenedor_busqueda">
+        <div class="lista_busqueda">
+            <a class="btn_busquedas" href="{% url 'personajebuscar' %}">BUSCAR PERSONAJES</a>
+            <a class="btn_busquedas" href="{% url 'compañerobuscar' %}">BUSCAR COMPAÑEROS</a>
+            <a class="btn_busquedas" href="{% url 'ubicacionbuscar' %}">BUSCAR UBICACIONES</a>
+        </div>
+    </div>
+    <a class="btn_volver" href="{% url 'inicio' %}">Volver</a>
+
+{% endblock %}

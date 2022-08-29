@@ -1,0 +1,24 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="titulotemplates">Escribí la región de la ubicación que quieras buscar</h1>
+
+{% endblock %}
+
+{% block contenido_variable %}
+
+    <div class="contenedor_buscar">
+        <form class="contenido_formbuscar" action="{% url 'resultadobusquedaubicacion' %}", method="GET"> {% csrf_token %}
+            <input class="rellenoform" placeholder="Escribir región" type="text", name="region", id="region">
+            <input class="submit" type="submit", value="Buscar">
+        </form>
+        {% if mensaje %}
+            <h3 class="mensajebusqueda">{{ mensaje }}</h3>
+        {% endif %}
+        <a class="btn_volver" href="{% url 'busqueda' %}">Volver</a>
+    </div>
+
+{% endblock %}

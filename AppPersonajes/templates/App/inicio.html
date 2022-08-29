@@ -1,0 +1,12 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{% block contenido_variable %}
+
+    <div class="contenedor_inicio">
+        <h1 class="titulo_inicio">Creación de Personajes, Compañeros y Ubicaciones</h1>
+        <a class="btn_crear" href="{% url 'crear' %}">CREAR</a>
+    </div>
+
+{% endblock %}

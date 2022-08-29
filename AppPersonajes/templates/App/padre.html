@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% load static %}
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href= "{% static '\App\css\style.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="{% static '\App\css\normalize.css' %}">
+        <title>Final</title>
+    </head>
+    <body>
+        <!-- Barra de navegación-->
+        <header>
+            <a class="btn_inicio" href="{% url 'inicio' %}">INICIO</a>
+            <nav class="barra_nav">
+                <a class="btn_ref" href="{% url 'personajes' %}">PERSONAJES</a>
+                <a class="btn_ref" href="{% url 'compañeros' %}">COMPAÑEROS</a>
+                <a class="btn_ref" href="{% url 'ubicaciones' %}">UBICACIONES</a>
+                <a class="btn_ref" href="{% url 'busqueda' %}">BUSCAR</a>
+            </nav>
+        </header>
+        <!--Titulo Principal-->
+        <div>
+            {% block titulo_de_pagina %} {%endblock %}
+        </div>
+
+        <!--Contenido variable entre templates-->
+        <div>
+            {% block contenido_variable %} {% endblock %}
+        </div>
+        <!--Links Datos personales-->
+        <footer class="mis_datos">
+            <a class="btn_links" target="_blank" href="http://instagram.com/gonnzad">Instagram</a>
+            <a class="btn_links" target="_blank" href="https://github.com/GonzaLandini">GitHub</a>
+            <a class="btn_links" target="_blank" href="https://plataforma.coderhouse.com/perfil/627a75c68d262f0018d3725f">CoderHouse</a>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="titulotemplates">Compañeros</h1>
+
+{% endblock %}
+
+{% block contenido_variable %}
+
+    <div class="contenedor_resultados">
+        <h2 class="tituloform">Resultado de Compañeros</h2>
+        <ol class="listaresultados">
+            {% for nombre in nombres %}
+                <li><h3 class="resultados">{{ nombre.nombre }}</h3></li>
+            {% endfor %}
+        </ol>
+        <a class="btn_crearresultados" href="{% url 'compañeroformulario' %}">CREAR NUEVO COMPAÑERO</a>
+    </div>
+    <a class="btn_volver" href="{% url 'busqueda' %}">Volver a Buscar</a>
+
+{% endblock %}
